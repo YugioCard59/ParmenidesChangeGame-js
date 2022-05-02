@@ -1,0 +1,40 @@
+/* Run this little game on any console by copy and pasting this code to a console that supports Javascript.  Make into executable file with:
+#!/usr/bin / env node  */
+
+function parmenidesReality(num1, num2) {
+
+   if (isNaN(num1) !== false || isNaN(num2) !== false) {
+    return "Give me a real positive integer.";
+  } 
+  if (num1 < 0 || num2 < 0) {
+    return "Let's be positive. Gimme a positive number."
+  }
+ 
+  var arrayOfChange = [ {change : 'real'}, {change : 'not real'}, {change : 'creates change'}, {change : 'does not exist'}, {change : 'only for the sake of change'}];
+  if (num2 >= 4) {
+    min = 0;
+    max = 4;
+    var ranNum2 = Math.random() * (max - min) + min;
+    num2 = Math.floor(ranNum2);
+    //console.log(num2);
+  }
+  if (num1 >= 4) {
+    var bigNum1 = Math.abs((num1 - (num1 + num2)));
+      return arrayOfChange[bigNum1] && arrayOfChange[num2];
+    }
+  if (num1 < 4 || num2 < 4) {
+    return arrayOfChange[num1] && arrayOfChange[num2];
+  }
+  
+}
+
+var numUno = prompt("Give me a real positive number please");
+var numDos = prompt("Give me another real positive number please");
+//console.log(typeof numUno);
+numUno = parseInt(numUno);
+numDos = parseInt(numDos);
+//console.log(isNaN(numUno));
+
+
+var output = parmenidesReality(numUno, numDos);
+console.log(output);
